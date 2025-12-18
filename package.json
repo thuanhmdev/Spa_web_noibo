@@ -1,0 +1,32 @@
+{
+  "name": "spa_api",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Ha Minh Thuan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/src/server.js",
+    "dev": "nodemon --exec babel-node ./src/server.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.4",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/eslint-parser": "^7.28.5",
+    "@babel/node": "^7.28.0",
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11"
+  }
+}
